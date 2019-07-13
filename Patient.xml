@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:patient xmlns:tns="http://www.sujeethkumar.com/patient"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sujeethkumar.com/patient patient.xsd ">
+	<tns:id>1</tns:id>
+	<tns:name>sujeeth</tns:name>
+	<tns:age>26</tns:age>
+	<tns:dob>1990-12-04</tns:dob>
+	<tns:email>sujeeth@sujeeth.com</tns:email>
+	<tns:gender>M</tns:gender>
+	<tns:phone>8162886397</tns:phone>
+</tns:patient>
