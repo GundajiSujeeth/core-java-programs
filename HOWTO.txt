@@ -9,15 +9,12 @@ Building and running the Project using Maven
   
   Maven install
  
-To Run the Client application:
 
-The javafirstwsut should be up and running on the server
- 
-WSDL URL:
- 
-http://localhost:8080/javafirstwsut/services/paymentProcessor?wsdl
+To Run the application and access the WSDL file:
 
-Running the client:
+Right click on the project, go to the Run As Menu Item and select run on the server option.
 
-Run the PaymentWSClient Java class which has the main method.
+WSDL URL once the application is up and running on Tomcat:
+
+http://localhost:8080/wsdlfirstws/services/customerOrders?wsdl
 

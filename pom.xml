@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bharath.soap.webservices</groupId>
-	<artifactId>soapclient</artifactId>
-	<packaging>jar</packaging>
+	<artifactId>wsdlfirstws</artifactId>
+	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>utclient</name>
-	<description>UT Client</description>
+	<name>WSDL First WS</name>
+	<description>WSDL First WS</description>
 	<properties>
 		<cxf.version>3.0.2</cxf.version>
 	</properties>
@@ -23,6 +23,14 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
 				<version>${cxf.version}</version>
@@ -34,7 +42,7 @@
 							<sourceRoot>${basedir}/src/generated</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>${basedir}/src/main/resources/paymentProcessor.wsdl</wsdl>
+									<wsdl>${basedir}/src/main/webapp/WEB-INF/wsdl/CustomerOrders.wsdl</wsdl>
 								</wsdlOption>
 							</wsdlOptions>
 						</configuration>
@@ -47,7 +55,7 @@
 
 		</plugins>
 
-		<finalName>soapclient</finalName>
+		<finalName>wsdlfirstws</finalName>
 	</build>
 
 	<dependencies>
@@ -61,18 +69,64 @@
 			<artifactId>cxf-rt-transports-http</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
+		<!-- Jetty is needed if you're are not using the CXFServlet -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-ws-security</artifactId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.wss4j</groupId>
-			<artifactId>wss4j</artifactId>
-			<version>2.0.2</version>
-			<type>pom</type>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.2.0.RELEASE</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>3.2.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.2.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.2.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-security</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
 
 	</dependencies>
 </project>
