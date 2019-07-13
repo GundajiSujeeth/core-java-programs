@@ -1,19 +1,17 @@
 <?xml version="1.0"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.bharath.soap.mtom</groupId>
-	<artifactId>mtom</artifactId>
+	<groupId>com.bharath.rest.webservices</groupId>
+	<artifactId>restws</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>mtom</name>
-	<description>MTOM</description>
-	<properties>
-		<cxf.version>3.0.2</cxf.version>
-	</properties>
+	<name>JAX-RS Basic Demo</name>
+	<description>JAX-RS Basic Demo</description>
+
 	<build>
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -32,25 +30,23 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>mtom</finalName>
+		<finalName>restws</finalName>
 	</build>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>${cxf.version}</version>
+			<version>3.0.3</version>
 		</dependency>
-		<!-- Jetty is needed if you're are not using the CXFServlet -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http-jetty</artifactId>
-			<version>${cxf.version}</version>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-service-description</artifactId>
+			<version>3.0.0-milestone1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -66,43 +62,13 @@
 
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>3.2.0.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>3.2.0.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>3.2.0.RELEASE</version>
 		</dependency>
-
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>3.2.0.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-ws-security</artifactId>
-			<version>3.0.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>3.0.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-			<version>3.1</version>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>1.9.13</version>
 		</dependency>
 
 	</dependencies>
